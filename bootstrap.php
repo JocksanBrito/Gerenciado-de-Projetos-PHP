@@ -2,5 +2,13 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-new San\Framework\Router;
-new App\Module;
+$router = new San\Framework\Router;
+
+$router->add('/',  function () {
+    return 'Estamos na homepage';
+});
+$router->add('/projects',  function () {
+    return 'Estamos Listando Projetos';
+});
+
+echo $router->run();
