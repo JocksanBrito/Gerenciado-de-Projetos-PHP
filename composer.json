@@ -1,0 +1,14 @@
+{
+    "name": "san/framework-son",
+    "autoload": {
+        "psr-4": {
+            "San\\Framework\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "jocksan"
+        }
+    ],
+    "require": {}
+}
