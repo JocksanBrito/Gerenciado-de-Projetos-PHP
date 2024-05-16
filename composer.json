@@ -2,8 +2,12 @@
     "name": "san/framework-son",
     "autoload": {
         "psr-4": {
-            "San\\Framework\\": "src/"
+            "San\\Framework\\": "src/",
+            "App\\": "app/"
         }
+    }, 
+    "scripts": {
+        "server": "php -S localhost:8080 -t public"
     },
     "authors": [
         {
