@@ -18,5 +18,7 @@
             "name": "jocksan"
         }
     ],
-    "require": {}
+    "require": {
+        "pimple/pimple": "^3.5"
+    }
 }
