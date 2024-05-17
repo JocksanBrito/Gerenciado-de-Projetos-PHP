@@ -4,11 +4,16 @@ require __DIR__ . '/vendor/autoload.php';
 
 $router = new San\Framework\Router;
 
-$router->add('/',  function () {
+$router->add('GET', '/',  function () {
     return 'Estamos na homepage';
 });
-$router->add('/projects/(\d+)',  function ($params) {
+$router->add('GET', '/projects/(\d+)',  function ($params) {
     return 'Estamos Listando o projeto de id: ' . $params[1];
 });
 
-echo $router->run();
+
+try {
+    echo $router->run();
+} catch (\San\Framework\Exceptions\HttpException $e) {
+    echo $e->getMessage();
+}
