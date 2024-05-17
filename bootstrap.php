@@ -8,7 +8,9 @@ require __DIR__ . '/config/containers.php';
 require __DIR__ . '/config/routes.php';
 
 try {
-    echo $router->run();
+    $result = $router->run();
+    $response = new \San\Framework\Response;
+    $response($result['action'], $result['params']);
 } catch (\San\Framework\Exceptions\HttpException $e) {
-    echo $e->getMessage();
+    echo json_encode(['error' => $e->getMessage()]);
 }
