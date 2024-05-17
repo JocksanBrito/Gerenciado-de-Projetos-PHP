@@ -2,7 +2,6 @@
 
 use Pimple\Container;
 
-
 $container = new Container();
 
 $container['db'] = function () {
@@ -10,7 +9,7 @@ $container['db'] = function () {
     $username = 'root';
     $password = null;
     $options = [
-        \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAME utf8'
+        \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'
     ];
 
     $pdo = new \PDO($dsn, $username, $password, $options);
