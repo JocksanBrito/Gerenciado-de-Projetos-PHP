@@ -9,8 +9,14 @@ require __DIR__ . '/config/routes.php';
 
 try {
     $result = $router->run();
-    $response = new \San\Framework\Response;
-    $response($result['action'], $result['params']);
+
+    $response = new San\Framework\Response;
+    $params = [
+        'container' => $container,
+        'params' => $result['action']
+    ];
+
+    $response($result['action'], $params);
 } catch (\San\Framework\Exceptions\HttpException $e) {
     echo json_encode(['error' => $e->getMessage()]);
 }
